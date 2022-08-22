@@ -22,7 +22,6 @@ export default {
   name: 'App',
   computed: {
     menus() {
-      console.log(routes)
       return routes
     }
   },
@@ -34,7 +33,6 @@ export default {
   methods: {
     handleSelect(index) {
       this.$router.push(index);
-
     }
   }
 }
