@@ -1,16 +1,41 @@
 <template>
   <el-container>
-    <el-header></el-header>
+    <el-header>
+      <el-menu :default-active="defaultActive" mode="horizontal" @select="handleSelect">
+        <div v-for="(item) in menus" :key="item.path">
+          <el-menu-item :index="item.path" :key="item.path" v-if="item.meta">
+            {{ item.meta.title }}
+          </el-menu-item>
+        </div>
+      </el-menu>
+    </el-header>
     <el-main>
+      <router-view />
     </el-main>
   </el-container>
 </template>
 
 <script>
+import { routes } from "@/router";
 
 export default {
   name: 'App',
-  components: {
+  computed: {
+    menus() {
+      console.log(routes)
+      return routes
+    }
+  },
+  data() {
+    return {
+      defaultActive: this.$route.path,
+    }
+  },
+  methods: {
+    handleSelect(index) {
+      this.$router.push(index);
+
+    }
   }
 }
 </script>
@@ -40,4 +65,9 @@ body,
   padding: 0;
   font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+.el-menu {
+  display: flex;
+}
+
 </style>
