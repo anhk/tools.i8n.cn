@@ -9,7 +9,10 @@
                 <el-checkbox label="special">特殊字符: -_!@#$%^&*()</el-checkbox>
             </el-checkbox-group>
             <el-button type="primary" size="small" class="generateBtn" @click="generatePassword">生成密码</el-button>
-            <el-input v-model="result"></el-input>
+            <div class="resultDiv">
+                <el-input v-model="result"></el-input>
+                <el-button size="small" @click="handleCopyText">点击复制</el-button>
+            </div>
         </div>
     </div>
 
@@ -60,6 +63,11 @@ export default {
         getOne(arr) {
             return arr[Math.floor(Math.random() * arr.length)];
         },
+        handleCopyText() {
+            const copyToClipboard = (text) => navigator.clipboard.writeText(text);
+            copyToClipboard(this.result);
+            this.$message.success("复制成功")
+        }
     }
 }
 
@@ -86,8 +94,8 @@ export default {
     display: flex;
     margin-top: 20px;
     flex-direction: column;
-align-items: flex-start;
-margin-left: 40%;
+    align-items: flex-start;
+    margin-left: 40%;
     width: 100%;
 }
 
@@ -97,5 +105,9 @@ margin-left: 40%;
 
 .generateBtn {
     margin: 20px;
+}
+
+.resultDiv {
+    display: flex;
 }
 </style>
