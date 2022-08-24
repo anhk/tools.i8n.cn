@@ -6,7 +6,7 @@
             placeholder="paste or type JSON here..."></textarea>
         <pre>{{ prettyFormat }}</pre>
     </div> -->
-    <div class="container">
+    <div class="json-container">
         <div> Json Formatter</div>
         <el-input v-model="jsonstr" type="textarea" :autosize="{ minRows: 20, maxRows: 30 }" ref="textarea"></el-input>
         <el-button type="primary" @click="prettyFormat">格式化</el-button>
@@ -76,10 +76,15 @@ export default {
 </script>
 
 <style>
-.container{
+.json-container {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    padding: 0, 40px;
+    align-items: center;
+    justify-items: flex-start;
 }
+
 .el-alert {
     margin: 20px 0 0;
 }

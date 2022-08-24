@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <div class="main">
+    <div class="random-container">
+        <div class="random-main">
             <div>随机密码工具</div>
             <el-checkbox-group v-model="checkList">
                 <el-checkbox label="lowercase">小写字母: a-z</el-checkbox>
@@ -74,7 +74,7 @@ export default {
 </script>
 
 <style>
-.container {
+.random-container {
     width: 100%;
     height: 100%;
     display: flex;
@@ -82,10 +82,11 @@ export default {
 }
 
 
-.main {
+.random-main {
     display: flex;
     flex-direction: column;
-    /* justify-items: center; */
+    justify-items: flex-start;
+    justify-content: flex-start;
     align-items: center;
     width: 400px;
 }
