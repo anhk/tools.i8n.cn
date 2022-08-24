@@ -10,9 +10,9 @@ export const routes = [
         component: () => import('../views/random'),
         meta: { title: '随机密码' }
     }, {
-        path: '/calc',
-        component: () => import('../views/calc'),
-        meta: { title: '计算器' }
+        path: '/json',
+        component: () => import('../views/json'),
+        meta: { title: 'JSON格式化' }
     }
 ]
 
