@@ -27,6 +27,9 @@ export default {
             result: ""
         }
     },
+    mounted() {
+        this.result = window.localStorage.getItem('random-password')
+    },
     methods: {
         generatePassword() {
             var num = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -59,6 +62,7 @@ export default {
                 newArr.push(arr.splice(Math.random() * arr.length, 1)[0]);
             }
             this.result = newArr.join("")
+            window.localStorage.setItem('random-password', this.result)
         },
         getOne(arr) {
             return arr[Math.floor(Math.random() * arr.length)];
