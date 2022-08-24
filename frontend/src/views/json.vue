@@ -1,7 +1,8 @@
 <template>
     <div class="json-container">
         <div> Json Formatter</div>
-        <el-input v-model="jsonstr" type="textarea" :autosize="{ minRows: 20, maxRows: 30 }" ref="textarea"></el-input>
+        <el-input v-model="jsonstr" type="textarea" :autosize="{ minRows: 20, maxRows: 30 }" ref="textarea"
+            placeholder="{}"></el-input>
         <el-button type="primary" @click="prettyFormat">格式化</el-button>
         <el-alert :title="jsonerror" :type="fmtType"></el-alert>
     </div>
@@ -17,13 +18,15 @@ export default {
         }
     },
     mounted() {
-        this.jsonstr = window.localStorage.getItem('jsonstr')
+        var st_str = window.localStorage.getItem('jsonstr')
+        this.jsonstr = (st_str && st_str != '') ? st_str : ''
     },
     methods: {
         prettyFormat() {
             this.jsonerror = "ok"
             let jsonValue = ""
             this.fmtType = "success"
+            window.localStorage.setItem('jsonstr', this.jsonstr)
 
             try {
                 jsonValue = JSON.parse(this.jsonstr)
