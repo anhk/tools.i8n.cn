@@ -8,7 +8,7 @@
     </div> -->
     <div class="container">
         <div> Json Formatter</div>
-        <el-input v-model="jsonstr" type="textarea" auto-grow rows="20" ref="textarea"></el-input>
+        <el-input v-model="jsonstr" type="textarea" :autosize="{ minRows: 20, maxRows: 50 }" ref="textarea"></el-input>
         <el-button type="primary" @click="prettyFormat">格式化</el-button>
         <el-alert :title="jsonerror" :type="fmtType"></el-alert>
     </div>
@@ -38,10 +38,10 @@ export default {
                 if (arr != null && arr.length > 1) {
 
                     let bodyTextArea = this.$refs.textarea.$el.querySelector('textarea')
-                    var pos =parseInt(arr[1])
+                    var pos = parseInt(arr[1])
                     this.$nextTick(() => {
                         bodyTextArea.focus()
-                        bodyTextArea.setSelectionRange(pos,pos+1)
+                        bodyTextArea.setSelectionRange(pos, pos + 1)
                     })
                 }
             }
