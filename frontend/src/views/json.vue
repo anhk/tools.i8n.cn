@@ -1,9 +1,9 @@
 <template>
-    <div class="json-container">
-        <div> Json Formatter</div>
+    <div class="mainContainer">
+        <div class="mainTitle">Json Formatter</div>
         <el-input v-model="jsonstr" type="textarea" :autosize="{ minRows: 20, maxRows: 30 }" ref="textarea"
             placeholder="{}"></el-input>
-        <el-button type="primary" @click="prettyFormat">格式化</el-button>
+        <el-button type="primary" class="execBtn" @click="prettyFormat" size="small">格式化</el-button>
         <el-alert :title="jsonerror" :type="fmtType"></el-alert>
     </div>
 </template>
@@ -51,20 +51,4 @@ export default {
 </script>
 
 <style>
-.json-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 0, 40px;
-    align-items: center;
-    justify-items: flex-start;
-}
-
-.el-alert {
-    margin: 20px 0 0;
-}
-
-.el-alert:first-child {
-    margin: 0;
-}
 </style>
