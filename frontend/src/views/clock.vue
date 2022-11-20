@@ -7,7 +7,7 @@
         <circle cx="70" cy="70" r="70"></circle>
         <circle cx="70" cy="70" r="70" id="hh"></circle>
       </svg>
-      <div><span id="hours">00</span><br><span class="label">Minutes</span></div>
+      <div><span id="hours">00</span><br><span class="label">Hours</span></div>
     </div>
     <div class="circle" style="--clr:#fee800;">
       <div class="dots min_dot"></div>
@@ -23,7 +23,7 @@
         <circle cx="70" cy="70" r="70"></circle>
         <circle cx="70" cy="70" r="70" id="ss"></circle>
       </svg>
-      <div><span id="seconds">00</span><br><span class="label">Minutes</span></div>
+      <div><span id="seconds">00</span><br><span class="label">Seconds</span></div>
     </div>
     <div class="ap">
       <div id="ampm">AM</div>
