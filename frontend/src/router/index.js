@@ -13,6 +13,10 @@ export const routes = [
         path: '/json',
         component: () => import('../views/json'),
         meta: { title: 'JSON格式化' }
+    },{
+    path:'/calculator',
+        component:()=>import('../views/calculator'),
+        meta: {title: '计算器'}
     }
 ]
 
